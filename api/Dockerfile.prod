@@ -1,0 +1,8 @@
+FROM node:alpine
+COPY package.json /app/
+RUN cd /app && \
+    npm install --quiet --production
+COPY . /app
+WORKDIR /app
+EXPOSE ${PORT}
+CMD npm run start
