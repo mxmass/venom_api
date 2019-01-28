@@ -1,3 +1,4 @@
+require('dotenv').config()
 module.exports = {
   secret: 'mysecretword',
   session: { session: false },

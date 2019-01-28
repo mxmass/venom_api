@@ -1,12 +1,46 @@
+require('dotenv').config()
 const passport = require('passport'),
+      aws = require('aws-sdk'),
       multer = require('multer'),
-      fs = require('fs'),
-      path = require('path')
+      multerS3 = require('multer-s3'),
+      // fs = require('fs'),
+      // path = require('path')
       config = require('@config'),
-      models = require('@MyApp/setup')
-
-const UPLOAD_PATH = 'uploads',
-      upload = multer({ dest: `${UPLOAD_PATH}/` })
+      models = require('@MyApp/app/setup')
+      // upload = require('@MyApp/app/utils/upload.js')
+const s3Config = new aws.S3({
+        accessKeyId: process.env.AWS_ACCESS_KEY,
+        secretAccessKey: process.env.AWS_ACCESS_SECRET,
+        Bucket: process.env.AWS_BUCKET_NAME
+      })
+const UPLOAD_PATH = 'venom/'
+      // upload = multer({ dest: `${UPLOAD_PATH}/` })
+const fileFilter = (req, file, cb) => {
+        if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+          cb(null, true)
+        } else {
+          cb(null, false)
+        }
+      }
+const multerS3Config = multerS3({
+        s3: s3Config,
+        bucket: process.env.AWS_BUCKET_NAME,
+        // acl: 'public-read',
+        metadata: function (req, file, cb) {
+          cb(null, { fieldName: file.fieldname })
+        },
+        key: function (req, file, cb) {
+          let curdate = new Date().toISOString()
+          cb(null, process.env.AWS_BUCKET_UPLOAD_PATH  + curdate + '-' + file.originalname)
+        }
+      })
+const upload = multer({
+        storage: multerS3Config,
+        fileFilter: fileFilter,
+        limits: {
+          fileSize: 1024 * 1024 * 5 // we are allowing only 5 MB files
+        }
+      })
 
 module.exports = (app) => {
   const api = app.app.MyAppAPI.controllers.front

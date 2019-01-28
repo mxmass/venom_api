@@ -21,7 +21,7 @@ const FrontSchema = mongoose.Schema({
   cutimage: {
     originalname: String,
     mimetype: String,
-    path: String
+    location: String
   },
   elements: [{
     code: String,
@@ -30,26 +30,17 @@ const FrontSchema = mongoose.Schema({
     height: String,
     originalname: String,
     mimetype: String,
-    path: String
+    location: String
   }],
   samples: [{
     originalname: String,
     mimetype: String,
-    path: String,
-    noflat: Boolean,
-    texture: {
-      type: mongoose.Schema.Types.Object,
-      ref: 'Palette.textures'
-    },
-    color: {
-      type: mongoose.Schema.Types.Object,
-      ref: 'Palette.colors'
-    }
+    location: String
   }],
   renders: [{
     originalname: String,
     mimetype: String,
-    path: String
+    location: String
   }]
 })
 

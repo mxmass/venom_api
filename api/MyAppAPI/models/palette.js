@@ -25,7 +25,7 @@ const PaletteSchema = mongoose.Schema({
     title: String,
     originalname: String,
     mimetype: String,
-    path: String
+    location: String
   }]
 })
 PaletteSchema.plugin(uniqueValidator)
