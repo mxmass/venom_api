@@ -6,7 +6,7 @@ const passport = require('passport'),
       // fs = require('fs'),
       // path = require('path')
       config = require('@config'),
-      models = require('@MyApp/app/setup')
+      models = require('@MyApp/setup')
       // upload = require('@MyApp/app/utils/upload.js')
 const s3Config = new aws.S3({
         accessKeyId: process.env.AWS_ACCESS_KEY,
