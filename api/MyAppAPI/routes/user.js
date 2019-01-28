@@ -1,4 +1,5 @@
 const passport = require('passport'),
+      config = require('@config'),
       models = require('@MyApp/setup')
 
 module.exports = (app) => {
