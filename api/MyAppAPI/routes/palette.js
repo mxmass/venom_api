@@ -54,7 +54,7 @@ module.exports = (app) => {
     .get(passport.authenticate('jwt', config.session), api.getOne(models.Palette, app.get('mysecretword')))
     .put(passport.authenticate('jwt', config.session), api.edit(models.Palette, app.get('mysecretword')))
 
-  app.route('/app/palette/files')
+  app.route('/app/palette/upload')
     .post(upload.array('file1'), async (req, res) => {
       try {
         // let update = req.body.append ? {$addToSet:{textures:req.files}} : {$set:{textures:req.files}}
