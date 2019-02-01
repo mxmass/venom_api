@@ -1,6 +1,5 @@
 FROM node:alpine
 COPY package.json /app/
-COPY .env.prod /app/.env
 RUN cd /app && \
     npm install --quiet --production
 WORKDIR /app
