@@ -1,4 +1,7 @@
 node_modules/
 uploads/
-Dockerfile.dev
+Dockerfile.local
 Dockerfile.prod
+.env
+.env.prod
+.env.dev
