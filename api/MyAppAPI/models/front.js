@@ -37,8 +37,13 @@ const FrontSchema = mongoose.Schema({
     mimetype: String,
     location: String,
     texture: {
-      location: String,
-      color: String
+      code: String,
+      title: String,
+      location: String
+    },
+    color: {
+      title: String,
+      code: String
     }
   }],
   renders: [{
