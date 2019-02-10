@@ -19,7 +19,7 @@ app.use(cors())
 app.use(passport.initialize())
 
 app.set('mysecretword', config.secret)
-consign({ cwd: './MyAppAPI/' })
+consign({ cwd: './MyAppAPI' })
       .include('setup/')
       .then('controllers/')
       .then('routes/')

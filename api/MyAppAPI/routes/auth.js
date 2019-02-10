@@ -2,9 +2,9 @@ const models = require('@MyApp/setup')
 
 module.exports = (app) => {
   const api = app.app.MyAppAPI.controllers.auth
-  // console.log(app)
+  // console.log(app.app)
   app.route('/')
-     .get((req, res) => res.send('My App API'))
+   .get((req, res) => res.send('My App API'))
   app.route('/app/auth')
-     .post(api.login(models.User))
+   .post(api.login(models.User))
 }
