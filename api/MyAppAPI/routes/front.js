@@ -31,8 +31,4 @@ module.exports = (app) => {
         res.status(400).json( {errorCODE: err} )
       }
     })
-
-  // app.route('/api/v2/front').get(api.getAllPublic(models.Front))
-  // app.route('/api/v2/front/single').get(api.getOnePublic(models.Front))
-
 }

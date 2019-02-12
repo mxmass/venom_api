@@ -8,7 +8,7 @@ const FrontSchema = mongoose.Schema({
   stitle: String,
   innerwidth: Number,
   backcolor: String,
-  style: {
+  stylish: {
     _id: Number,
     stitle: String,
     title: String
@@ -26,8 +26,10 @@ const FrontSchema = mongoose.Schema({
   elements: [{
     code: String,
     title: String,
-    width: String,
-    height: String,
+    wmin: Number,
+    wmax: Number,
+    hmin: Number,
+    hmax: Number,
     originalname: String,
     mimetype: String,
     location: String
