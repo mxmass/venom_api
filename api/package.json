@@ -1,19 +1,19 @@
 {
-  "name": "nodejs_mongodb_dockerised_test_app",
+  "name": "hm_venom",
   "version": "1.0.0",
   "description": "Dockerised NodeJS+MongoDB App",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "development": "nodemon server.js",
-    "test": "mocha --timeout 10000"
+    "test": "mocha"
   },
   "_moduleAliases": {
     "@root": ".",
-    "@MyApp": "./MyAppAPI",
-    "@MyAppModels": "./MyAppAPI/models",
-    "@MyAppAPI": "./MyAppAPI/config/app.js",
-    "@config": "./MyAppAPI/config/index.js"
+    "@REST": "./REST",
+    "@rAPI": "./REST/config/app.js",
+    "@models": "./REST/models",
+    "@config": "./REST/config/index.js"
   },
   "author": "Ilya Novikov",
   "license": "MIT",

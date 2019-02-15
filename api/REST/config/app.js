@@ -1,7 +1,6 @@
 const express = require('express'),
       app = express(),
       bodyParser = require('body-parser'),
-      mongoose = require('mongoose'),
       morgan = require('morgan'),
       consign = require('consign'),
       cors = require('cors'),
@@ -9,6 +8,7 @@ const express = require('express'),
       passportConfig = require('./passport')(passport),
       jwt = require('jsonwebtoken'),
       config = require('./index.js'),
+      mongoose = require('mongoose'),
       database = require('./database')(mongoose, config)
 
 app.use(express.static('.'))
@@ -19,7 +19,7 @@ app.use(cors())
 app.use(passport.initialize())
 
 app.set('mysecretword', config.secret)
-consign({ cwd: './MyAppAPI' })
+consign({ cwd: './REST' })
       .include('setup/')
       .then('controllers/')
       .then('routes/')

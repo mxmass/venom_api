@@ -1,7 +1,7 @@
 const mongoose = require('mongoose'),
-      UserModel = require('@MyAppModels/user'),
-      PaletteModel = require('@MyAppModels/palette')
-      FrontModel = require('@MyAppModels/front')
+      UserModel = require('@models/user'),
+      PaletteModel = require('@models/palette')
+      FrontModel = require('@models/front')
 
 const models = {
   User: mongoose.model('User'),

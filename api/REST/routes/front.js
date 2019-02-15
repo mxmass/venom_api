@@ -1,11 +1,11 @@
 require('dotenv').config()
 const passport = require('passport'),
       config = require('@config'),
-      models = require('@MyApp/setup')
-      upload = require('@MyApp/utils/s3upload.js')
+      models = require('@REST/setup')
+      upload = require('@REST/utils/s3upload.js')
 
 module.exports = (app) => {
-  const api = app.app.MyAppAPI.controllers.front
+  const api = app.app.REST.controllers.front
 
   app.route('/public')
     .get(api.getAllPublic(models.Front))

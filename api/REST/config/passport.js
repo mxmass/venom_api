@@ -2,7 +2,7 @@ const PassportJWT = require('passport-jwt'),
       ExtractJWT = PassportJWT.ExtractJwt,
       Strategy = PassportJWT.Strategy,
       config = require('./index.js'),
-      models = require('@MyApp/setup')
+      models = require('@REST/setup')
 
 module.exports = (passport) => {
   const User = models.User

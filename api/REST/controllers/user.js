@@ -1,24 +1,23 @@
 const mongoose = require('mongoose')
 const api = {}
 
-// api.setup = (User) => (req, res) => {
-//   const admin = new User({
-//     username: 'admin',
-//     password: 'admin'
-//   })
-//   admin.save(error => {
-//     if (error) throw error
-//     console.log('Admin account was succesfully set up')
-//     res.json({ success: true })
-//   })
-// }
+api.setup = (User) => (req, res) => {
+  const admin = new User({
+    username: 'admin',
+    password: 'admin'
+  })
+  admin.save(error => {
+    if (error) throw error
+    res.json({ success: true, message: 'Admin account created' })
+  })
+}
 
 api.index = (User, Token) => (req, res) => {
   const token = Token
   if (token) {
     User.find({}, (error, users) => {
       if (error) throw error
-      res.status(200).json(users)
+      res.status(200).json({ users: users })
     })
   } else return res.status(403).send({ success: false, message: 'Unauthorized' })
 }
