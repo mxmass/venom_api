@@ -3,8 +3,6 @@ services:
   api:
     build:
       context: ./api
-      dockerfile: Dockerfile.dev
-    volumes:
-      - "./api:/app"
+      dockerfile: Dockerfile.prod
     ports:
       - "${API_SERVER_PORT}:${API_SERVER_PORT}"

@@ -3,7 +3,7 @@ services:
   web:
     build:
       context: ./web
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.test
     ports:
       - "${WEB_SERVER_PORT}:${WEB_SERVER_PORT}"
     volumes:

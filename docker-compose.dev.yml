@@ -4,6 +4,8 @@ services:
     build:
       context: ./api
       dockerfile: Dockerfile.dev
+    environment:
+      - NODE_ENV=development
     volumes:
       - "./api:/app"
     ports:

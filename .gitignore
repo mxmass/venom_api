@@ -1,3 +1,4 @@
 .env
 .DS_Store
 web
+docker-compose.web.yml
