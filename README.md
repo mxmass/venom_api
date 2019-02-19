@@ -4,6 +4,7 @@
 
 This is a part of one of the ongoing projects
 
+```
 API => (Express, NodeJS, MongoDB) { ...
 
   Security: JWT,
@@ -12,6 +13,7 @@ API => (Express, NodeJS, MongoDB) { ...
   Tests: [mocha, chai]
 
 }
+```
 
 Couple of shell scripts make life a bit easier (don't forget to make scripts executable)
 
