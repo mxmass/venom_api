@@ -1,13 +1,19 @@
-# Home made VENoM
+# API NodeJS, MongoDB
 
 ## Overview
 
-VENoM stands for VueJS, Express, NodeJS & MongoDB ... not mine idea, but i like it ;)
+This is a part of one of the ongoing projects
 
-This bit of the app is an API (with JWT auth and AWS S3 direct upload)
-Package is dockerized
-Couple of shell scripts make life a bit easier
-Don't forget to make scripts executable
+API => (Express, NodeJS, MongoDB) { ...
+
+  Security: JWT,
+  File_storage: AWS_S3 direct upload,
+  Container: Docker,
+  Tests: [mocha, chai]
+
+}
+
+Couple of shell scripts make life a bit easier (don't forget to make scripts executable)
 
 ```
 chmod a+x <filename>
